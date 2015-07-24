@@ -1,7 +1,7 @@
 var timeInfo = function(goalFPS) {
     var oldTime,
         paused = true,
-        interCount = 0,
+        iterCount = 0,
         totalFPS = 0,
         totalCoeff = 0;
 
@@ -20,7 +20,7 @@ var timeInfo = function(goalFPS) {
             }
 
             var newTime = +new Date(); // узнаем время в миллисекундах
-            var elapsed = newTime— oldTime;
+            var elapsed = newTime - oldTime;
             oldTime = newTime;
             var FPS = 1000 / elapsed;
             iterCount++;
@@ -33,7 +33,7 @@ var timeInfo = function(goalFPS) {
                 coeff: goalFPS / FPS,
                 FPS: FPS,
                 averageFPS: totalFPS / iterCount,
-                averageCoeff: totalCoeff / interCount
+                averageCoeff: totalCoeff / iterCount
             };
         },
         pause: function () {
